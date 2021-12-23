@@ -46,7 +46,7 @@ class RunTests: XCTestCase {
     }
 
     private func fetch(_ page: Int) {
-        useCase.fetchAccounts(page: page) { (result) in
+        _ = useCase.fetchAccounts(page: page) { (result) in
             print("-> page: \(page), result:", result)
         }
     }
@@ -68,8 +68,6 @@ class NopCancelable: Cancelable {
 }
 
 extension InvocationCancelable: Cancelable { }
-
-typealias Completion<T> = (Result<T, Error>) -> ()
 
 // MARK: Domain / Presentation
 

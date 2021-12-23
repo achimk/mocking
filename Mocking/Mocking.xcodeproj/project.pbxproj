@@ -20,8 +20,12 @@
 		277C80392774FD7700DA5091 /* InvokeAlwaysStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277C80382774FD7700DA5091 /* InvokeAlwaysStrategy.swift */; };
 		277C803D2774FD9100DA5091 /* InvokeInOrderStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277C803C2774FD9100DA5091 /* InvokeInOrderStrategy.swift */; };
 		277C80442774FE1800DA5091 /* RunTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277C80402774FDD400DA5091 /* RunTests.swift */; };
-		277C804C2774FE7D00DA5091 /* InvocationCancelable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277C804B2774FE7D00DA5091 /* InvocationCancelable.swift */; };
-		277C80502774FE9000DA5091 /* UnhandledInvocationConditionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277C804F2774FE9000DA5091 /* UnhandledInvocationConditionError.swift */; };
+		277C804C2774FE7D00DA5091 /* InvocationCancelation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277C804B2774FE7D00DA5091 /* InvocationCancelation.swift */; };
+		277C80502774FE9000DA5091 /* UnhandledInvocationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277C804F2774FE9000DA5091 /* UnhandledInvocationError.swift */; };
+		277C80552775052300DA5091 /* OneTimeToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277C80542775052300DA5091 /* OneTimeToken.swift */; };
+		277C805D2775087300DA5091 /* CancelCompletionStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277C805C2775087300DA5091 /* CancelCompletionStrategy.swift */; };
+		277C80632775092600DA5091 /* CancelInvocationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277C80622775092600DA5091 /* CancelInvocationError.swift */; };
+		277C806727750A1800DA5091 /* InvocatonCompletion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277C806627750A1800DA5091 /* InvocatonCompletion.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,8 +55,12 @@
 		277C80382774FD7700DA5091 /* InvokeAlwaysStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvokeAlwaysStrategy.swift; sourceTree = "<group>"; };
 		277C803C2774FD9100DA5091 /* InvokeInOrderStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvokeInOrderStrategy.swift; sourceTree = "<group>"; };
 		277C80402774FDD400DA5091 /* RunTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunTests.swift; sourceTree = "<group>"; };
-		277C804B2774FE7D00DA5091 /* InvocationCancelable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvocationCancelable.swift; sourceTree = "<group>"; };
-		277C804F2774FE9000DA5091 /* UnhandledInvocationConditionError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnhandledInvocationConditionError.swift; sourceTree = "<group>"; };
+		277C804B2774FE7D00DA5091 /* InvocationCancelation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvocationCancelation.swift; sourceTree = "<group>"; };
+		277C804F2774FE9000DA5091 /* UnhandledInvocationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnhandledInvocationError.swift; sourceTree = "<group>"; };
+		277C80542775052300DA5091 /* OneTimeToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneTimeToken.swift; sourceTree = "<group>"; };
+		277C805C2775087300DA5091 /* CancelCompletionStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelCompletionStrategy.swift; sourceTree = "<group>"; };
+		277C80622775092600DA5091 /* CancelInvocationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelInvocationError.swift; sourceTree = "<group>"; };
+		277C806627750A1800DA5091 /* InvocatonCompletion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvocatonCompletion.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,10 +103,10 @@
 		277C7FF32774FA5000DA5091 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				277C80532775051100DA5091 /* Utilities */,
 				277C80202774FCBE00DA5091 /* Answer */,
 				277C80152774FB4000DA5091 /* Invocation */,
 				277C80292774FD0C00DA5091 /* Strategies */,
-				277C801A2774FC9900DA5091 /* Support.swift */,
 				277C7FF42774FA5000DA5091 /* Mocking.h */,
 				277C7FF52774FA5000DA5091 /* Info.plist */,
 			);
@@ -119,8 +127,10 @@
 			isa = PBXGroup;
 			children = (
 				277C80162774FC7900DA5091 /* InvocationCondition.swift */,
-				277C804B2774FE7D00DA5091 /* InvocationCancelable.swift */,
-				277C804F2774FE9000DA5091 /* UnhandledInvocationConditionError.swift */,
+				277C806627750A1800DA5091 /* InvocatonCompletion.swift */,
+				277C804B2774FE7D00DA5091 /* InvocationCancelation.swift */,
+				277C804F2774FE9000DA5091 /* UnhandledInvocationError.swift */,
+				277C80622775092600DA5091 /* CancelInvocationError.swift */,
 			);
 			path = Invocation;
 			sourceTree = "<group>";
@@ -137,13 +147,23 @@
 		277C80292774FD0C00DA5091 /* Strategies */ = {
 			isa = PBXGroup;
 			children = (
-				277C802A2774FD1E00DA5091 /* HandleCompletionStrategy.swift */,
 				277C80302774FD3800DA5091 /* AnswerCompletionStrategy.swift */,
+				277C805C2775087300DA5091 /* CancelCompletionStrategy.swift */,
+				277C802A2774FD1E00DA5091 /* HandleCompletionStrategy.swift */,
 				277C80342774FD5F00DA5091 /* NopInvokeStrategy.swift */,
 				277C80382774FD7700DA5091 /* InvokeAlwaysStrategy.swift */,
 				277C803C2774FD9100DA5091 /* InvokeInOrderStrategy.swift */,
 			);
 			path = Strategies;
+			sourceTree = "<group>";
+		};
+		277C80532775051100DA5091 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				277C801A2774FC9900DA5091 /* Support.swift */,
+				277C80542775052300DA5091 /* OneTimeToken.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,16 +275,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				277C80502774FE9000DA5091 /* UnhandledInvocationConditionError.swift in Sources */,
+				277C805D2775087300DA5091 /* CancelCompletionStrategy.swift in Sources */,
+				277C80502774FE9000DA5091 /* UnhandledInvocationError.swift in Sources */,
 				277C80222774FCDA00DA5091 /* Answer.swift in Sources */,
-				277C804C2774FE7D00DA5091 /* InvocationCancelable.swift in Sources */,
+				277C804C2774FE7D00DA5091 /* InvocationCancelation.swift in Sources */,
+				277C806727750A1800DA5091 /* InvocatonCompletion.swift in Sources */,
 				277C803D2774FD9100DA5091 /* InvokeInOrderStrategy.swift in Sources */,
 				277C80172774FC7900DA5091 /* InvocationCondition.swift in Sources */,
 				277C80312774FD3800DA5091 /* AnswerCompletionStrategy.swift in Sources */,
 				277C80352774FD5F00DA5091 /* NopInvokeStrategy.swift in Sources */,
 				277C80262774FCF100DA5091 /* AnswerExpectation.swift in Sources */,
+				277C80552775052300DA5091 /* OneTimeToken.swift in Sources */,
 				277C80392774FD7700DA5091 /* InvokeAlwaysStrategy.swift in Sources */,
 				277C801B2774FC9900DA5091 /* Support.swift in Sources */,
+				277C80632775092600DA5091 /* CancelInvocationError.swift in Sources */,
 				277C802B2774FD1E00DA5091 /* HandleCompletionStrategy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,16 +1,25 @@
 import Foundation
 
-class InvokeInOrderStrategy<Output>: HandleCompletionStrategy, AnswerCompletionStrategy {
-    private var answers: [InvocationResult<Output, Error>] = []
-    private var completions: [InvocationCompletion<Output>] = []
+class InvokeInOrderStrategy<Output>: HandleCompletionStrategy, AnswerCompletionStrategy, CancelCompletionStrategy {
+    private var answers: [Result<Output, Error>] = []
+    private var completions: [Completion<Output>] = []
 
-    func answer(with result: InvocationResult<Output, Error>) {
+    func answer(with result: Result<Output, Error>) {
         answers.append(result)
         startDequeue()
     }
 
-    func handle(with completion: @escaping InvocationCompletion<Output>) {
+    func handle(with completion: @escaping Completion<Output>) {
         completions.append(completion)
+        startDequeue()
+    }
+
+    func cancel(with error: Error) {
+        guard answers.isEmpty && !completions.isEmpty else {
+            return
+        }
+
+        answers.append(.failure(error))
         startDequeue()
     }
 

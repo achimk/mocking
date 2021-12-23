@@ -4,7 +4,7 @@ class Answer<Output> {
     private(set) var expectation: AnswerExpectation<Output> = .init(strategy: NopInvokeStrategy())
 
     func then(_ completion: @escaping () throws -> Output) {
-        let strategy = InvokeAlwaysStrategy(InvocationResult(catching: completion))
+        let strategy = InvokeAlwaysStrategy(Result(catching: completion))
         expectation = AnswerExpectation(strategy: strategy)
     }
 

@@ -1,17 +1,15 @@
 import Foundation
 
-class InvocationCancelable {
+class InvocationCancelation {
+    private let token = OneTimeToken()
     private let onCancel: () -> ()
-    private(set) var isCanceled: Bool = false
+    var isCanceled: Bool { token.isSealed }
 
     init(onCancel: @escaping () -> () = { }) {
         self.onCancel = onCancel
     }
 
     func cancel() {
-        if !isCanceled {
-            isCanceled = true
-            cancel()
-        }
+        token.run(onCancel)
     }
 }

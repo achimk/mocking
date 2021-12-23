@@ -8,17 +8,20 @@ class InvocationCondition<Input, Output> {
 
 extension InvocationCondition {
 
-    func handle(_ input: Input, completion: @escaping InvocationCompletion<Output>) -> InvocationCancelable {
+    func handle(_ input: Input, completion: @escaping Completion<Output>) -> InvocationCancelation {
+        let completion = InvocationCompletion(completion: completion)
 
         for (condition, answer) in invocations {
             if condition(input) {
-                answer.expectation.handleWith(completion)
-                return InvocationCancelable()
+                answer.expectation.handleWith(completion.complete(with:))
+                return InvocationCancelation {
+                    answer.expectation.cancelWith(CancelInvocationError())
+                }
             }
         }
 
-        completion(.failure(UnhandledInvocationConditionError()))
-        return InvocationCancelable()
+        completion.complete(with: .failure(UnhandledInvocationError()))
+        return InvocationCancelation()
     }
 }
 

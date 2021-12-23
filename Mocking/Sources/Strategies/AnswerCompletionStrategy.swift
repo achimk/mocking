@@ -1,6 +1,6 @@
 import Foundation
 
 protocol AnswerCompletionStrategy {
-    associatedtype Answer
-    func answer(with result: InvocationResult<Answer, Error>)
+    associatedtype Output
+    func answer(with result: Result<Output, Error>)
 }
