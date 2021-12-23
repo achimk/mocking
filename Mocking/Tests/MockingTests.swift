@@ -1,10 +1,3 @@
-//
-//  MockingTests.swift
-//  MockingTests
-//
-//  Created by Joachim Kret on 23/12/2021.
-//
-
 import XCTest
 @testable import Mocking
 

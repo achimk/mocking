@@ -10,6 +10,18 @@
 		277C7FFB2774FA5000DA5091 /* Mocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 277C7FF12774FA5000DA5091 /* Mocking.framework */; };
 		277C80002774FA5000DA5091 /* MockingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277C7FFF2774FA5000DA5091 /* MockingTests.swift */; };
 		277C80022774FA5000DA5091 /* Mocking.h in Headers */ = {isa = PBXBuildFile; fileRef = 277C7FF42774FA5000DA5091 /* Mocking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		277C80172774FC7900DA5091 /* InvocationCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277C80162774FC7900DA5091 /* InvocationCondition.swift */; };
+		277C801B2774FC9900DA5091 /* Support.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277C801A2774FC9900DA5091 /* Support.swift */; };
+		277C80222774FCDA00DA5091 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277C80212774FCDA00DA5091 /* Answer.swift */; };
+		277C80262774FCF100DA5091 /* AnswerExpectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277C80252774FCF100DA5091 /* AnswerExpectation.swift */; };
+		277C802B2774FD1E00DA5091 /* HandleCompletionStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277C802A2774FD1E00DA5091 /* HandleCompletionStrategy.swift */; };
+		277C80312774FD3800DA5091 /* AnswerCompletionStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277C80302774FD3800DA5091 /* AnswerCompletionStrategy.swift */; };
+		277C80352774FD5F00DA5091 /* NopInvokeStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277C80342774FD5F00DA5091 /* NopInvokeStrategy.swift */; };
+		277C80392774FD7700DA5091 /* InvokeAlwaysStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277C80382774FD7700DA5091 /* InvokeAlwaysStrategy.swift */; };
+		277C803D2774FD9100DA5091 /* InvokeInOrderStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277C803C2774FD9100DA5091 /* InvokeInOrderStrategy.swift */; };
+		277C80442774FE1800DA5091 /* RunTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277C80402774FDD400DA5091 /* RunTests.swift */; };
+		277C804C2774FE7D00DA5091 /* InvocationCancelable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277C804B2774FE7D00DA5091 /* InvocationCancelable.swift */; };
+		277C80502774FE9000DA5091 /* UnhandledInvocationConditionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277C804F2774FE9000DA5091 /* UnhandledInvocationConditionError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +41,18 @@
 		277C7FFA2774FA5000DA5091 /* MockingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MockingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		277C7FFF2774FA5000DA5091 /* MockingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockingTests.swift; sourceTree = "<group>"; };
 		277C80012774FA5000DA5091 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		277C80162774FC7900DA5091 /* InvocationCondition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvocationCondition.swift; sourceTree = "<group>"; };
+		277C801A2774FC9900DA5091 /* Support.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Support.swift; sourceTree = "<group>"; };
+		277C80212774FCDA00DA5091 /* Answer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
+		277C80252774FCF100DA5091 /* AnswerExpectation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerExpectation.swift; sourceTree = "<group>"; };
+		277C802A2774FD1E00DA5091 /* HandleCompletionStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandleCompletionStrategy.swift; sourceTree = "<group>"; };
+		277C80302774FD3800DA5091 /* AnswerCompletionStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerCompletionStrategy.swift; sourceTree = "<group>"; };
+		277C80342774FD5F00DA5091 /* NopInvokeStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NopInvokeStrategy.swift; sourceTree = "<group>"; };
+		277C80382774FD7700DA5091 /* InvokeAlwaysStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvokeAlwaysStrategy.swift; sourceTree = "<group>"; };
+		277C803C2774FD9100DA5091 /* InvokeInOrderStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvokeInOrderStrategy.swift; sourceTree = "<group>"; };
+		277C80402774FDD400DA5091 /* RunTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunTests.swift; sourceTree = "<group>"; };
+		277C804B2774FE7D00DA5091 /* InvocationCancelable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvocationCancelable.swift; sourceTree = "<group>"; };
+		277C804F2774FE9000DA5091 /* UnhandledInvocationConditionError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnhandledInvocationConditionError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +95,10 @@
 		277C7FF32774FA5000DA5091 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				277C80202774FCBE00DA5091 /* Answer */,
+				277C80152774FB4000DA5091 /* Invocation */,
+				277C80292774FD0C00DA5091 /* Strategies */,
+				277C801A2774FC9900DA5091 /* Support.swift */,
 				277C7FF42774FA5000DA5091 /* Mocking.h */,
 				277C7FF52774FA5000DA5091 /* Info.plist */,
 			);
@@ -80,10 +108,42 @@
 		277C7FFE2774FA5000DA5091 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				277C80402774FDD400DA5091 /* RunTests.swift */,
 				277C7FFF2774FA5000DA5091 /* MockingTests.swift */,
 				277C80012774FA5000DA5091 /* Info.plist */,
 			);
 			path = Tests;
+			sourceTree = "<group>";
+		};
+		277C80152774FB4000DA5091 /* Invocation */ = {
+			isa = PBXGroup;
+			children = (
+				277C80162774FC7900DA5091 /* InvocationCondition.swift */,
+				277C804B2774FE7D00DA5091 /* InvocationCancelable.swift */,
+				277C804F2774FE9000DA5091 /* UnhandledInvocationConditionError.swift */,
+			);
+			path = Invocation;
+			sourceTree = "<group>";
+		};
+		277C80202774FCBE00DA5091 /* Answer */ = {
+			isa = PBXGroup;
+			children = (
+				277C80212774FCDA00DA5091 /* Answer.swift */,
+				277C80252774FCF100DA5091 /* AnswerExpectation.swift */,
+			);
+			path = Answer;
+			sourceTree = "<group>";
+		};
+		277C80292774FD0C00DA5091 /* Strategies */ = {
+			isa = PBXGroup;
+			children = (
+				277C802A2774FD1E00DA5091 /* HandleCompletionStrategy.swift */,
+				277C80302774FD3800DA5091 /* AnswerCompletionStrategy.swift */,
+				277C80342774FD5F00DA5091 /* NopInvokeStrategy.swift */,
+				277C80382774FD7700DA5091 /* InvokeAlwaysStrategy.swift */,
+				277C803C2774FD9100DA5091 /* InvokeInOrderStrategy.swift */,
+			);
+			path = Strategies;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,6 +207,7 @@
 				TargetAttributes = {
 					277C7FF02774FA5000DA5091 = {
 						CreatedOnToolsVersion = 12.3;
+						LastSwiftMigration = 1230;
 					};
 					277C7FF92774FA5000DA5091 = {
 						CreatedOnToolsVersion = 12.3;
@@ -194,6 +255,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				277C80502774FE9000DA5091 /* UnhandledInvocationConditionError.swift in Sources */,
+				277C80222774FCDA00DA5091 /* Answer.swift in Sources */,
+				277C804C2774FE7D00DA5091 /* InvocationCancelable.swift in Sources */,
+				277C803D2774FD9100DA5091 /* InvokeInOrderStrategy.swift in Sources */,
+				277C80172774FC7900DA5091 /* InvocationCondition.swift in Sources */,
+				277C80312774FD3800DA5091 /* AnswerCompletionStrategy.swift in Sources */,
+				277C80352774FD5F00DA5091 /* NopInvokeStrategy.swift in Sources */,
+				277C80262774FCF100DA5091 /* AnswerExpectation.swift in Sources */,
+				277C80392774FD7700DA5091 /* InvokeAlwaysStrategy.swift in Sources */,
+				277C801B2774FC9900DA5091 /* Support.swift in Sources */,
+				277C802B2774FD1E00DA5091 /* HandleCompletionStrategy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,6 +274,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				277C80002774FA5000DA5091 /* MockingTests.swift in Sources */,
+				277C80442774FE1800DA5091 /* RunTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +414,7 @@
 		277C80062774FA5000DA5091 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -358,6 +432,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -366,6 +441,7 @@
 		277C80072774FA5000DA5091 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -391,6 +467,7 @@
 		277C80092774FA5000DA5091 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -408,6 +485,7 @@
 		277C800A2774FA5000DA5091 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
