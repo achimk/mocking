@@ -13,6 +13,8 @@
 		277C80872775D13B00DA5091 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 277C80852775D13B00DA5091 /* LaunchScreen.storyboard */; };
 		277C80922775D13C00DA5091 /* SampleAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277C80912775D13C00DA5091 /* SampleAppTests.swift */; };
 		277C809D2775D13C00DA5091 /* SampleAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277C809C2775D13C00DA5091 /* SampleAppUITests.swift */; };
+		277C80CB2775D6CD00DA5091 /* Mocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 277C80C22775D6B700DA5091 /* Mocking.framework */; };
+		277C80CC2775D6CD00DA5091 /* Mocking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 277C80C22775D6B700DA5091 /* Mocking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,7 +32,35 @@
 			remoteGlobalIDString = 277C80762775D13B00DA5091;
 			remoteInfo = SampleApp;
 		};
+		277C80C12775D6B700DA5091 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 277C80BC2775D6B700DA5091 /* Mocking.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 277C7FF12774FA5000DA5091;
+			remoteInfo = Mocking;
+		};
+		277C80C32775D6B700DA5091 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 277C80BC2775D6B700DA5091 /* Mocking.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 277C7FFA2774FA5000DA5091;
+			remoteInfo = MockingTests;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		277C80CD2775D6CD00DA5091 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				277C80CC2775D6CD00DA5091 /* Mocking.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		277C80772775D13B00DA5091 /* SampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,6 +75,7 @@
 		277C80982775D13C00DA5091 /* SampleAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SampleAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		277C809C2775D13C00DA5091 /* SampleAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleAppUITests.swift; sourceTree = "<group>"; };
 		277C809E2775D13C00DA5091 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		277C80BC2775D6B700DA5091 /* Mocking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Mocking.xcodeproj; path = ../Mocking/Mocking.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				277C80CB2775D6CD00DA5091 /* Mocking.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,10 +107,12 @@
 		277C806E2775D13B00DA5091 = {
 			isa = PBXGroup;
 			children = (
+				277C80BC2775D6B700DA5091 /* Mocking.xcodeproj */,
 				277C80792775D13B00DA5091 /* SampleApp */,
 				277C80902775D13C00DA5091 /* SampleAppTests */,
 				277C809B2775D13C00DA5091 /* SampleAppUITests */,
 				277C80782775D13B00DA5091 /* Products */,
+				277C80CA2775D6CD00DA5091 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -122,6 +156,22 @@
 			path = SampleAppUITests;
 			sourceTree = "<group>";
 		};
+		277C80BD2775D6B700DA5091 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				277C80C22775D6B700DA5091 /* Mocking.framework */,
+				277C80C42775D6B700DA5091 /* MockingTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		277C80CA2775D6CD00DA5091 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,6 +182,7 @@
 				277C80732775D13B00DA5091 /* Sources */,
 				277C80742775D13B00DA5091 /* Frameworks */,
 				277C80752775D13B00DA5091 /* Resources */,
+				277C80CD2775D6CD00DA5091 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -211,6 +262,12 @@
 			mainGroup = 277C806E2775D13B00DA5091;
 			productRefGroup = 277C80782775D13B00DA5091 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 277C80BD2775D6B700DA5091 /* Products */;
+					ProjectRef = 277C80BC2775D6B700DA5091 /* Mocking.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				277C80762775D13B00DA5091 /* SampleApp */,
@@ -219,6 +276,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		277C80C22775D6B700DA5091 /* Mocking.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Mocking.framework;
+			remoteRef = 277C80C12775D6B700DA5091 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		277C80C42775D6B700DA5091 /* MockingTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = MockingTests.xctest;
+			remoteRef = 277C80C32775D6B700DA5091 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		277C80752775D13B00DA5091 /* Resources */ = {
