@@ -9,7 +9,7 @@ class InvocationCompletion<T> {
     }
 
     func complete(with result: Result<T, Error>) {
-        token.run { [completion] in
+        token.run {
             completion(result)
         }
     }

@@ -1,20 +1,32 @@
 import Foundation
 
-class InvokeInOrderStrategy<Output>: HandleCompletionStrategy, AnswerCompletionStrategy, CancelCompletionStrategy {
+class InvokeInOrderStrategy<Output> {
     private var answers: [Result<Output, Error>] = []
     private var completions: [Completion<Output>] = []
+}
+
+extension InvokeInOrderStrategy: HandleCompletionStrategy {
+
+    func handle(with completion: @escaping Completion<Output>) -> CancelToken {
+        completions.append(completion)
+        startDequeue()
+        return CancelToken { [weak self] (error) in
+            self?.cancel(with: error)
+        }
+    }
+}
+
+extension InvokeInOrderStrategy: AnswerCompletionStrategy {
 
     func answer(with result: Result<Output, Error>) {
         answers.append(result)
         startDequeue()
     }
+}
 
-    func handle(with completion: @escaping Completion<Output>) {
-        completions.append(completion)
-        startDequeue()
-    }
+extension InvokeInOrderStrategy {
 
-    func cancel(with error: Error) {
+    private func cancel(with error: Error) {
         guard answers.isEmpty && !completions.isEmpty else {
             return
         }
@@ -48,3 +60,4 @@ class InvokeInOrderStrategy<Output>: HandleCompletionStrategy, AnswerCompletionS
         completions.removeFirst()
     }
 }
+

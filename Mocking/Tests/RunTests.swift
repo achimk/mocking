@@ -67,7 +67,7 @@ class NopCancelable: Cancelable {
     }
 }
 
-extension InvocationCancelable: Cancelable { }
+extension InvocationCancelation: Cancelable { }
 
 // MARK: Domain / Presentation
 
@@ -87,8 +87,6 @@ class AccountsListPresenter {
 }
 
 // MARK: Testing
-
-struct TestError: Error { }
 
 class MockAccountsFetchUseCase: InvocationCondition<Int, [Account]>, AccountsFetchHandling {
 

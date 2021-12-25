@@ -1,21 +1,17 @@
 import Foundation
 
 class AnswerExpectation<Output> {
-    let notifyAnswer: (Result<Output, Error>) -> Void
-    let handleWith: (@escaping Completion<Output>) -> Void
-    let cancelWith: (Error) -> Void
+    private let consumeAnswer: (Result<Output, Error>) -> Void
 
-    init<S>(strategy: S) where S: AnswerCompletionStrategy, S: HandleCompletionStrategy, S: CancelCompletionStrategy, S.Output == Output {
-        notifyAnswer = strategy.answer(with:)
-        handleWith = strategy.handle(with:)
-        cancelWith = strategy.cancel(with:)
+    init(consumeAnswer: @escaping (Result<Output, Error>) -> Void) {
+        self.consumeAnswer = consumeAnswer
     }
 
     func success(_ value: Output) {
-        notifyAnswer(.success(value))
+        consumeAnswer(.success(value))
     }
 
     func failure(_ error: Error) {
-        notifyAnswer(.failure(error))
+        consumeAnswer(.failure(error))
     }
 }

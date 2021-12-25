@@ -13,10 +13,8 @@ extension InvocationCondition {
 
         for (condition, answer) in invocations {
             if condition(input) {
-                answer.expectation.handleWith(completion.complete(with:))
-                return InvocationCancelation {
-                    answer.expectation.cancelWith(CancelInvocationError())
-                }
+                let cancelToken = answer.handleWith(completion.complete(with:))
+                return InvocationCancelation(cancelToken)
             }
         }
 
