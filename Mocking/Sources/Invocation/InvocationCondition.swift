@@ -6,6 +6,27 @@ class InvocationCondition<Input, Output> {
     private var invocations: [Invocation] = []
 }
 
+// MARK: Register / Unregister
+
+extension InvocationCondition {
+
+    func register(_ condition: @escaping (Input) -> Bool) -> Answer<Output> {
+        let invocation: Invocation = (condition, Answer())
+        invocations.append(invocation)
+        return invocation.answer
+    }
+
+    func registerAny() -> Answer<Output> {
+        register { _ in true }
+    }
+
+    func unregisterAll() {
+        invocations = []
+    }
+}
+
+// MARK: Handle
+
 extension InvocationCondition {
 
     func handle(_ input: Input, completion: @escaping Completion<Output>) -> InvocationCancelation {
@@ -20,18 +41,5 @@ extension InvocationCondition {
 
         completion.complete(with: .failure(UnhandledInvocationError()))
         return InvocationCancelation()
-    }
-}
-
-extension InvocationCondition {
-
-    func when(_ condition: @escaping (Input) -> Bool) -> Answer<Output> {
-        let invocation: Invocation = (condition, Answer())
-        invocations.append(invocation)
-        return invocation.answer
-    }
-
-    func whenAny() -> Answer<Output> {
-        when { _ in true }
     }
 }

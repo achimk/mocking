@@ -1,19 +1,30 @@
 import Foundation
 
-class InvocationCancelation {
+public class InvocationCancelation {
     private let token: CancelToken
-    var error: Error = CancelInvocationError()
-    var isCanceled: Bool { token.isCanceled }
+    private var handlers: [() -> Void] = []
+    public var error: Error = CancelInvocationError()
+    public var isCanceled: Bool { token.isCanceled }
 
-    init() {
-        token = CancelToken()
-    }
-
-    init(_ token: CancelToken) {
+    init(_ token: CancelToken = CancelToken()) {
         self.token = token
     }
 
-    func cancel() {
+    public func cancel() {
+        guard !isCanceled else {
+            return
+        }
+
         token.cancel(with: error)
+        handlers.forEach { $0() }
+        handlers = []
+    }
+
+    public func onCancel(_ block: @escaping () -> Void) {
+        if isCanceled {
+            block()
+        } else {
+            handlers.append(block)
+        }
     }
 }

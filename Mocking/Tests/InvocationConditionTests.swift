@@ -1,65 +1,34 @@
 import XCTest
 @testable import Mocking
 
-// MARK: Implementation
-
-protocol AsyncCancelable {
-    func cancel()
-}
-
-protocol AsyncTransformable {
-    associatedtype Input
-    associatedtype Output
-    func transform(_ input: Input, completion: @escaping Completion<Output>) -> AsyncCancelable
-}
-
-// MARK: Mocks for Implementation
-
-extension InvocationCancelation: AsyncCancelable { }
-
-final class MockTransformer: InvocationCondition<Int, String>, AsyncTransformable {
-
-    func transform(_ input: Int, completion: @escaping Completion<String>) -> AsyncCancelable {
-        return handle(input, completion: completion)
-    }
-}
-
-// MARK: Tests
-
 class InvocationConditionTests: XCTestCase {
+    typealias MockTransformer = InvocationCondition<Int, String>
 
-}
-
-// MARK: Mock Immediately Tests
-
-extension InvocationConditionTests {
+    // MARK: Mock Immediately Tests
 
     func test_mockImmediately_cancelShouldNotBeTakenIntoAccount() {
 
         let sink = CompletionSink<Result<String, Error>>()
         let mock = MockTransformer()
-        mock.whenAny().thenSuccess("1")
+        mock.registerAny().thenSuccess("1")
 
-        let cancelToken = mock.transform(1, completion: sink.on)
+        let cancelToken = mock.handle(1, completion: sink.on)
         cancelToken.cancel()
 
         assertPresent(sink.lastResult) {
             XCTAssertTrue($0.isSuccess)
         }
     }
-}
 
-// MARK: Mock Deferred Tests
-
-extension InvocationConditionTests {
+    // MARK: Mock Deferred Tests
 
     func test_mockDeferred_cancelShouldBeTakenIntoAccount() {
 
         let sink: SinkWithExpectation<Result<String, Error>> = makeSinkWithExpectation()
         let mock = MockTransformer()
-        mock.whenAny().thenAfter(1, success: "1")
+        mock.registerAny().thenAfter(1, success: "1")
 
-        let cancelToken = mock.transform(1, completion: sink.on)
+        let cancelToken = mock.handle(1, completion: sink.on)
         cancelToken.cancel()
 
         wait(for: sink, timeout: 3)
@@ -69,19 +38,16 @@ extension InvocationConditionTests {
             XCTAssertNotNil($0.error as? CancelInvocationError)
         }
     }
-}
 
-// MARK: Mock In Order Tests
-
-extension InvocationConditionTests {
+    // MARK: Mock In Order Tests
 
     func test_mockInOrder_cancelShouldBeTakenIntoAccount() {
 
         let sink = CompletionSink<Result<String, Error>>()
         let mock = MockTransformer()
-        let expectation = mock.whenAny().thenExpect()
+        let expectation = mock.registerAny().thenExpect()
 
-        let cancelToken = mock.transform(1, completion: sink.on)
+        let cancelToken = mock.handle(1, completion: sink.on)
         cancelToken.cancel()
         expectation.success("1")
 
