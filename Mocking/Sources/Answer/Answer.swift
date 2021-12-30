@@ -1,7 +1,10 @@
 import Foundation
 
 public class Answer<Output> {
-    private(set) var handleWith: (@escaping Completion<Output>) -> CancelToken = { _ in CancelToken() }
+    private(set) var handleWith: (@escaping Completion<Output>) -> CancelToken = { completion in
+        completion(.failure(UnhandledInvocationError()))
+        return CancelToken()
+    }
 }
 
 // MARK: Immediate Answers
@@ -9,7 +12,7 @@ public class Answer<Output> {
 extension Answer {
 
     public func then(_ completion: @escaping () throws -> Output) {
-        let strategy = InvokeImediatelyStrategy(Result(catching: completion))
+        let strategy = InvokeImmediatelyStrategy(Result(catching: completion))
         handleWith = strategy.handle(with:)
     }
 

@@ -1,3 +1,3 @@
 import Foundation
 
-struct UnhandledInvocationError: Error { }
+public struct UnhandledInvocationError: Error { }

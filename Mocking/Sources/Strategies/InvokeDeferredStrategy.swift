@@ -1,8 +1,8 @@
 import Foundation
 
 class InvokeDeferredStrategy<Output> {
-    private let timeout: TimeInterval
-    private var answerResult: Result<Output, Error>
+    let timeout: TimeInterval
+    let answerResult: Result<Output, Error>
 
     init(timeout: TimeInterval, answerResult: Result<Output, Error>) {
         self.timeout = timeout

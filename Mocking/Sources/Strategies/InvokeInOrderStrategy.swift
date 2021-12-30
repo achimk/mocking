@@ -1,8 +1,8 @@
 import Foundation
 
 class InvokeInOrderStrategy<Output> {
-    private var answers: [Result<Output, Error>] = []
-    private var completions: [Completion<Output>] = []
+    private(set) var answers: [Result<Output, Error>] = []
+    private(set) var completions: [Completion<Output>] = []
 }
 
 extension InvokeInOrderStrategy: HandleCompletionStrategy {

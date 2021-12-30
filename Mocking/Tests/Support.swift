@@ -9,19 +9,23 @@ class CompletionSink<T> {
     private(set) var isInvoked: Bool = false
     private(set) var invokeCount: Int = 0
     private(set) var results: [T] = []
-//    private var handlers: [() -> Void] = []
+
+    var firstResult: T? { results.first }
 
     var lastResult: T? { results.last }
 
-//    func notify(_ handler: @escaping () -> Void) {
-//        handlers.append(handler)
-//    }
+    func result(at index: Int) -> T? {
+        if results.indices.contains(index) {
+            return results[index]
+        } else {
+            return nil
+        }
+    }
 
     func on(_ result: T) {
         isInvoked = true
         invokeCount += 1
         results.append(result)
-//        handlers.forEach { $0() }
     }
 
     func reset() {
@@ -94,7 +98,6 @@ extension XCTestCase {
         XCTAssertEqual(sink.invokeCount, count, "Invoke count doesn't match: \(sink.invokeCount) != \(count)")
     }
 }
-
 
 extension XCTestCase {
 

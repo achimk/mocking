@@ -1,3 +1,3 @@
 import Foundation
 
-struct CancelInvocationError: Error { }
+public struct CancelInvocationError: Error { }
