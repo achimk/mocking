@@ -119,3 +119,9 @@ extension XCTestCase {
 func undefined<T>() -> T {
     fatalError()
 }
+
+protocol DataProcessing {
+    func start()
+    func cancel()
+    func pause()
+}

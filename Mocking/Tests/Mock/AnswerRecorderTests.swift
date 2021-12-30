@@ -1,9 +1,9 @@
 import XCTest
-@testable import Mocking
+import Mocking
 
-class MockResourceTests: XCTestCase {
+class AnswerRecorderTests: XCTestCase {
 
-    typealias MockTransformer = MockResource<Int, String>
+    typealias MockTransformer = AnswerRecorder<Int, String>
     private var sink = CompletionSink<Result<String, Error>>()
 
     override func setUp() {
@@ -155,7 +155,7 @@ class MockResourceTests: XCTestCase {
         XCTAssertTrue(mock.verifyInOrder([1, 2, 3]))
     }
 
-    func test_verifyContainsShouldBeCorrect() {
+    func test_verifyContains_shouldBeCorrect() {
         let mock = MockTransformer()
         mock.whenAny().thenSuccess("1")
 
@@ -187,7 +187,7 @@ class MockResourceTests: XCTestCase {
         XCTAssertTrue(mock.verifyInOrder([]))
     }
 
-    func test_clearConditions_ShouldUnregisterAllConditions() {
+    func test_clearConditions_shouldUnregisterAllConditions() {
         let mock = MockTransformer()
         mock.whenAny().thenSuccess("1")
 

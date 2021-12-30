@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		273CB58E277E3DF500074E1E /* TypeRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273CB58D277E3DF500074E1E /* TypeRecorder.swift */; };
+		273CB59E277E4E3600074E1E /* TypeRecorderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273CB59D277E4E3600074E1E /* TypeRecorderTests.swift */; };
+		273CB5A9277E56EE00074E1E /* EventRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273CB5A3277E55E200074E1E /* EventRecorder.swift */; };
+		273CB5AF277E577100074E1E /* EventRecorderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273CB5AE277E577100074E1E /* EventRecorderTests.swift */; };
 		277C7FFB2774FA5000DA5091 /* Mocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 277C7FF12774FA5000DA5091 /* Mocking.framework */; };
 		277C80022774FA5000DA5091 /* Mocking.h in Headers */ = {isa = PBXBuildFile; fileRef = 277C7FF42774FA5000DA5091 /* Mocking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		277C80172774FC7900DA5091 /* InvocationCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277C80162774FC7900DA5091 /* InvocationCondition.swift */; };
@@ -25,11 +29,11 @@
 		277C80D82776040300DA5091 /* InvokeDeferredStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277C80D72776040300DA5091 /* InvokeDeferredStrategy.swift */; };
 		277C80E1277604DC00DA5091 /* InvocationConditionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277C80DD277604C000DA5091 /* InvocationConditionTests.swift */; };
 		277C80EC277607D700DA5091 /* Support.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277C80E82776076000DA5091 /* Support.swift */; };
-		277C81012776819300DA5091 /* MockResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277C81002776819300DA5091 /* MockResource.swift */; };
+		277C81012776819300DA5091 /* AnswerRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277C81002776819300DA5091 /* AnswerRecorder.swift */; };
 		277C810527772A1500DA5091 /* CancelToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277C810427772A1500DA5091 /* CancelToken.swift */; };
 		277C811027786EB700DA5091 /* InvokeCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277C810F27786EB700DA5091 /* InvokeCounter.swift */; };
 		277C811627786F2A00DA5091 /* InvokeHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277C811527786F2A00DA5091 /* InvokeHistory.swift */; };
-		277C812C2778793700DA5091 /* MockResourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277C81192778785100DA5091 /* MockResourceTests.swift */; };
+		277C812C2778793700DA5091 /* AnswerRecorderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277C81192778785100DA5091 /* AnswerRecorderTests.swift */; };
 		27AF1388277DCEC0006B482C /* InvokeCounterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AF1382277DCEB4006B482C /* InvokeCounterTests.swift */; };
 		27B89404277DD0D200BF65CB /* InvokeHistoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B89403277DD0D200BF65CB /* InvokeHistoryTests.swift */; };
 		27B8940F277DD18200BF65CB /* AnswerExpectationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B8940E277DD18200BF65CB /* AnswerExpectationTests.swift */; };
@@ -54,6 +58,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		273CB58D277E3DF500074E1E /* TypeRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeRecorder.swift; sourceTree = "<group>"; };
+		273CB59D277E4E3600074E1E /* TypeRecorderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeRecorderTests.swift; sourceTree = "<group>"; };
+		273CB5A3277E55E200074E1E /* EventRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventRecorder.swift; sourceTree = "<group>"; };
+		273CB5AE277E577100074E1E /* EventRecorderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventRecorderTests.swift; sourceTree = "<group>"; };
 		277C7FF12774FA5000DA5091 /* Mocking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Mocking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		277C7FF42774FA5000DA5091 /* Mocking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Mocking.h; sourceTree = "<group>"; };
 		277C7FF52774FA5000DA5091 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -75,11 +83,11 @@
 		277C80D72776040300DA5091 /* InvokeDeferredStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvokeDeferredStrategy.swift; sourceTree = "<group>"; };
 		277C80DD277604C000DA5091 /* InvocationConditionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvocationConditionTests.swift; sourceTree = "<group>"; };
 		277C80E82776076000DA5091 /* Support.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Support.swift; sourceTree = "<group>"; };
-		277C81002776819300DA5091 /* MockResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockResource.swift; sourceTree = "<group>"; };
+		277C81002776819300DA5091 /* AnswerRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerRecorder.swift; sourceTree = "<group>"; };
 		277C810427772A1500DA5091 /* CancelToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelToken.swift; sourceTree = "<group>"; };
 		277C810F27786EB700DA5091 /* InvokeCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvokeCounter.swift; sourceTree = "<group>"; };
 		277C811527786F2A00DA5091 /* InvokeHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvokeHistory.swift; sourceTree = "<group>"; };
-		277C81192778785100DA5091 /* MockResourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockResourceTests.swift; sourceTree = "<group>"; };
+		277C81192778785100DA5091 /* AnswerRecorderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerRecorderTests.swift; sourceTree = "<group>"; };
 		27AF1382277DCEB4006B482C /* InvokeCounterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvokeCounterTests.swift; sourceTree = "<group>"; };
 		27B89403277DD0D200BF65CB /* InvokeHistoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvokeHistoryTests.swift; sourceTree = "<group>"; };
 		27B8940E277DD18200BF65CB /* AnswerExpectationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerExpectationTests.swift; sourceTree = "<group>"; };
@@ -206,7 +214,9 @@
 		277C80FF2776817900DA5091 /* Mock */ = {
 			isa = PBXGroup;
 			children = (
-				277C81002776819300DA5091 /* MockResource.swift */,
+				277C81002776819300DA5091 /* AnswerRecorder.swift */,
+				273CB5A3277E55E200074E1E /* EventRecorder.swift */,
+				273CB58D277E3DF500074E1E /* TypeRecorder.swift */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -232,7 +242,9 @@
 		27B89409277DD10800BF65CB /* Mock */ = {
 			isa = PBXGroup;
 			children = (
-				277C81192778785100DA5091 /* MockResourceTests.swift */,
+				277C81192778785100DA5091 /* AnswerRecorderTests.swift */,
+				273CB59D277E4E3600074E1E /* TypeRecorderTests.swift */,
+				273CB5AE277E577100074E1E /* EventRecorderTests.swift */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -385,7 +397,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				277C80502774FE9000DA5091 /* UnhandledInvocationError.swift in Sources */,
-				277C81012776819300DA5091 /* MockResource.swift in Sources */,
+				277C81012776819300DA5091 /* AnswerRecorder.swift in Sources */,
+				273CB5A9277E56EE00074E1E /* EventRecorder.swift in Sources */,
 				277C80222774FCDA00DA5091 /* Answer.swift in Sources */,
 				277C804C2774FE7D00DA5091 /* InvocationCancelation.swift in Sources */,
 				277C806727750A1800DA5091 /* InvocatonCompletion.swift in Sources */,
@@ -400,6 +413,7 @@
 				277C80392774FD7700DA5091 /* InvokeImmediatelyStrategy.swift in Sources */,
 				277C801B2774FC9900DA5091 /* Support.swift in Sources */,
 				277C811027786EB700DA5091 /* InvokeCounter.swift in Sources */,
+				273CB58E277E3DF500074E1E /* TypeRecorder.swift in Sources */,
 				277C80632775092600DA5091 /* CancelInvocationError.swift in Sources */,
 				277C802B2774FD1E00DA5091 /* HandleCompletionStrategy.swift in Sources */,
 			);
@@ -418,9 +432,11 @@
 				27B89419277DE38500BF65CB /* InvocationCompletionTests.swift in Sources */,
 				27B89413277DD3B300BF65CB /* AnswerTests.swift in Sources */,
 				27B8940F277DD18200BF65CB /* AnswerExpectationTests.swift in Sources */,
+				273CB5AF277E577100074E1E /* EventRecorderTests.swift in Sources */,
 				27B89404277DD0D200BF65CB /* InvokeHistoryTests.swift in Sources */,
-				277C812C2778793700DA5091 /* MockResourceTests.swift in Sources */,
+				277C812C2778793700DA5091 /* AnswerRecorderTests.swift in Sources */,
 				27B8941D277DE4BC00BF65CB /* InvocationCancelationTests.swift in Sources */,
+				273CB59E277E4E3600074E1E /* TypeRecorderTests.swift in Sources */,
 				27B89439277DECA700BF65CB /* InvokeDeferredStrategyTests.swift in Sources */,
 				27B89428277DE85200BF65CB /* OneTimeTokenTests.swift in Sources */,
 			);

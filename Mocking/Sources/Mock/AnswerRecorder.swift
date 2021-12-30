@@ -6,7 +6,7 @@ public struct InvokeParams<Input> {
     public let input: Input
 }
 
-open class MockResource<Input: Equatable, Output> {
+open class AnswerRecorder<Input: Equatable, Output> {
     private let invokeCounter = InvokeCounter()
     private let invokeHistory = InvokeHistory<Input>()
     private let conditions = InvocationCondition<InvokeParams<Input>, Output>()
@@ -16,7 +16,7 @@ open class MockResource<Input: Equatable, Output> {
 
 // MARK: Handle
 
-extension MockResource {
+extension AnswerRecorder {
 
     @discardableResult
     public func handle(
@@ -38,7 +38,7 @@ extension MockResource {
 
 // MARK: Conditions
 
-extension MockResource {
+extension AnswerRecorder {
 
     public func when(_ condition: @escaping (InvokeParams<Input>) -> Bool) -> Answer<Output> {
         conditions.register(condition)
@@ -51,7 +51,7 @@ extension MockResource {
 
 // MARK: Verify
 
-extension MockResource {
+extension AnswerRecorder {
 
     public func verify(count: Int) -> Bool {
         invokeCounter.count == count
@@ -76,7 +76,7 @@ extension MockResource {
 
 // MARK: Others
 
-extension MockResource {
+extension AnswerRecorder {
 
     public func reset() {
         invokeCounter.reset()
